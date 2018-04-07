@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm>
 
+/*统计一个数字在排序数组中出现的次数。*/
+
 int GetNumberOfK(vector<int> data ,int k) 
 {
     if (data.empty())
