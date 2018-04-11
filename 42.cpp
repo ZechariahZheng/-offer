@@ -42,3 +42,9 @@ vector<int> FindNumbersWithSum(vector<int> array,int sum)
     }
     return result;
 }
+
+int main()
+{
+    system("pause");
+    return 0;
+}
