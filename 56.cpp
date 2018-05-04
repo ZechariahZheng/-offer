@@ -7,7 +7,8 @@ using namespace std;
 例如，链表1->2->3->3->4->4->5 处理后为 1->2->5*/
 
 /*思路：
-使用vector存下所有的变量，将*/
+使用list存下所有不相同的变量，
+之后遍历一次重新指向新的地址*/
 
 struct ListNode {
     int val;
