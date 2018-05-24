@@ -12,35 +12,22 @@ bool IsPopOrder(vector<int> pushV,vector<int> popV)
 {
     /*入参判断*/
     if (pushV.size()!=popV.size() && pushV.size()==0)
-		return false;
+        return false;
     /*将压栈序列逐个压入辅助栈，边压栈的过程边判断*/
     stack<int> tmpV;
-    vector<int>::iterator itPush = pushV.begin();
-    vector<int>::iterator itPop = popV.begin();
 
-    while (itPush != pushV.end())
+    int j = 0;
+    for (int i = 0; i < pushV.size(); i++)
     {
-        /*将压栈序列压入辅助栈，直到碰到出栈序列的栈顶元素*/
-        if (*itPush == *itPop)
+        /*将序列压入辅助栈*/
+        tmpV.push(pushV[i]);
+        /*判断辅助栈的栈顶元素与出栈序列的元素*/
+        while (!(tmpV.empty()) && tmpV.top()==popV[j])
         {
-            itPop++;
+            tmpV.pop();
+            j++;
         }
-        else
-        {
-            tmpV.push(*itPush);
-        }
-        ++itPush;
     }
-
-    /*压栈序列已全部进入辅助栈，判断剩余出栈序列与辅助栈*/
-    while (tmpV.top()==*itPop && (!tmpV.empty()))
-    {
-        tmpV.pop();
-        itPop++;
-		if (tmpV.empty())
-			break;
-    }
-    
     if (tmpV.empty())
         return true;
     else
