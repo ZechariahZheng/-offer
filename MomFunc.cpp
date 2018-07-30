@@ -37,6 +37,7 @@ int main()
                     temp[j+k] += sup[j]; 
                 }
             }
+            /*将临时的结果覆盖当前结果，同时把临时结果置零，为下次做准备*/
             for (j = 0; j <= target; j++)
             {
                 sup[j] = temp[j];
