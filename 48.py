@@ -4,4 +4,3 @@ class Solution:
         # write code here
         all = [num1, num2]
         return sum(all)
-        
